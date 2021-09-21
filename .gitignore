@@ -1,2 +1,4 @@
+# Stop you from seeing our secrets
 credentials.py
+# probably required idk
 __pycache__
