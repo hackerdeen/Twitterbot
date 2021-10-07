@@ -51,7 +51,13 @@ def send_tweet(status_track):
     if status_changed==True:
         tweet = "Space " + state + " by " + state_array['trigger_person']+ " with message: " + state_array['message']
         print(tweet)
-        api.update_status(tweet)
+        try:
+            api.update_status(tweet)
+        except tweepy.TweepError as error:
+            if error.api_code == 187:
+                print("Already posted")
+        else:
+            print("Hey it tweeted OK")
     else:
         print("no change")
     

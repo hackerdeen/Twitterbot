@@ -1,0 +1,11 @@
+[Unit]
+Description=Hackerspace tweetbot enabler
+After=multi-user.target
+
+[Service]
+ExecStart=sh -c '/home/pi/Twitterbot/bin/python3 /home/pi/Twitterbot/tweet_status.py'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
